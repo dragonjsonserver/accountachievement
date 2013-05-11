@@ -43,6 +43,7 @@ class Accountachievement extends \DragonJsonServerAchievement\Entity\AbstractAch
 	public function toArray()
 	{
 		return parent::toArray() + [
+			'entity' => 'Accountachievement',
 			'accountachievement_id' => $this->getAccountachievementId(),
 			'account_id' => $this->getAccountId(),
 		];
