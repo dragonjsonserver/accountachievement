@@ -28,6 +28,17 @@ class Accountachievement extends \DragonJsonServerAchievement\Entity\AbstractAch
 	protected $accountachievement_id;
 	
 	/**
+	 * Setzt die ID der Accountherausforderung
+	 * @param integer $accountachievement_id
+	 * @return Accountachievement
+	 */
+	protected function setAccountachievementId($accountachievement_id)
+	{
+		$this->accountachievement_id = $accountachievement_id;
+		return $this;
+	}
+	
+	/**
 	 * Gibt die ID der Accountherausforderung zurück
 	 * @return integer
 	 */
@@ -37,13 +48,24 @@ class Accountachievement extends \DragonJsonServerAchievement\Entity\AbstractAch
 	}
 	
 	/**
+	 * Setzt die Attribute der Accountherausforderung aus dem Array
+	 * @param array $array
+	 * @return Accountachievement
+	 */
+	public function fromArray(array $array)
+	{
+		return parent::fromArray($array)
+			->setAccountachievementId($array['accountachievement_id'])
+			->setAccountId($array['account_id']);
+	}
+	
+	/**
 	 * Gibt die Attribute der Accountherausforderung als Array zurück
 	 * @return array
 	 */
 	public function toArray()
 	{
 		return parent::toArray() + [
-			'entity' => 'Accountachievement',
 			'accountachievement_id' => $this->getAccountachievementId(),
 			'account_id' => $this->getAccountId(),
 		];
