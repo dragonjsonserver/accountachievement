@@ -49,7 +49,7 @@ class Module
     	$sharedManager = $moduleManager->getEventManager()->getSharedManager();
     	$sharedManager->attach('DragonJsonServerAccount\Service\Account', 'RemoveAccount', 
 	    	function (\DragonJsonServerAccount\Event\RemoveAccount $eventRemoveAccount) {
-	    		$serviceAccountachievement = $this->getServiceManager()->get('Accountachievement');
+	    		$serviceAccountachievement = $this->getServiceManager()->get('\DragonJsonServerAccountachievement\Service\Accountachievement');
 	    		$serviceAccountachievement->removeAccountachievementsByAccountId($eventRemoveAccount->getAccount()->getAccountId());
 	    	}
     	);

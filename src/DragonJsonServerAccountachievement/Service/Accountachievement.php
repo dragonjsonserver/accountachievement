@@ -85,7 +85,7 @@ class Accountachievement
 	public function changeAccountachievement($account_id, $gamedesign_identifier, $data)
 	{
 		$accountachievement = $this->getAccountachievementByAccountIdAndGamedesignIdentifier($account_id, $gamedesign_identifier);
-		$this->getServiceManager()->get('Achievement')->changeAchievement($accountachievement, $data);
+		$this->getServiceManager()->get('\DragonJsonServerAchievement\Service\Achievement')->changeAchievement($accountachievement, $data);
 		return $accountachievement;
 	}
 }

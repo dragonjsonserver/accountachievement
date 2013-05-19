@@ -25,8 +25,9 @@ class Accountachievement
 	{
 		$serviceManager = $this->getServiceManager();
 
-		$session = $serviceManager->get('Session')->getSession();
-		$accountachievements = $serviceManager->get('Accountachievement')->getAccountachievementsByAccountId($session->getAccountId()); 
-		return $serviceManager->get('Doctrine')->toArray($accountachievements);
+		$session = $serviceManager->get('\DragonJsonServerAccount\Service\Session')->getSession();
+		$serviceAccountachievement = $serviceManager->get('\DragonJsonServerAccountachievement\Service\Accountachievement');
+		$accountachievements = $serviceAccountachievement->getAccountachievementsByAccountId($session->getAccountId()); 
+		return $serviceManager->get('\DragonJsonServerDoctrine\Service\Doctrine')->toArray($accountachievements);
 	}
 }

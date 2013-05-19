@@ -21,7 +21,7 @@ return [
 	],
 	'service_manager' => [
 		'invokables' => [
-            'Accountachievement' => '\DragonJsonServerAccountachievement\Service\Accountachievement',
+            '\DragonJsonServerAccountachievement\Service\Accountachievement' => '\DragonJsonServerAccountachievement\Service\Accountachievement',
 		],
 	],
 	'doctrine' => [
